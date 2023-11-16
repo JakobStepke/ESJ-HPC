@@ -70,12 +70,33 @@ int main()
     cout << "sa = " << sa << endl;
   }
 
-  cout << "Select(mask, a, b) = " << Select(mask, a,b) << endl;
+  cout << "Select(mask, a, b) = " << Select(mask, a,c) << endl;
 
   auto d = a*b+c;
   cout << "d = " << d << endl;
 
   auto e = a/b-c;
   cout << "e = " << e << endl;
+
+  auto matrix_row_1 = SIMD<double,4>(1,2,3,4);
+  auto matrix_row_2 = SIMD<double,4>(5,6,7,8);
+  auto matrix_row_3 = SIMD<double,4>(9,10,11,12);
+  auto matrix_row_4 = SIMD<double,4>(13,14,15,16);
+
+  auto copy_to_transpose_1 = SIMD<double,4>();
+  auto copy_to_transpose_2 = SIMD<double,4>();
+  auto copy_to_transpose_3 = SIMD<double,4>();
+  auto copy_to_transpose_4 = SIMD<double,4>();
   
+  Transpose(matrix_row_1, matrix_row_2, matrix_row_3, matrix_row_4, copy_to_transpose_1, copy_to_transpose_2, copy_to_transpose_3, copy_to_transpose_4);
+
+  cout << "matrix_row_1 = " << matrix_row_1 << endl;
+  cout << "matrix_row_2 = " << matrix_row_2 << endl;
+  cout << "matrix_row_3 = " << matrix_row_3 << endl;
+  cout << "matrix_row_4 = " << matrix_row_4 << endl;
+
+  cout << "copy_to_transpose_1 = " << copy_to_transpose_1 << endl;
+  cout << "copy_to_transpose_2 = " << copy_to_transpose_2 << endl;
+  cout << "copy_to_transpose_3 = " << copy_to_transpose_3 << endl;
+  cout << "copy_to_transpose_4 = " << copy_to_transpose_4 << endl;
 }
