@@ -48,7 +48,8 @@ SIMD<double,2> TestHSum (SIMD<double,4> a, SIMD<double,4> b)
 int main()
 {
   SIMD<double,4> a(1.,2.,3.,4.);
-  SIMD<double,4> b(1.0);
+  SIMD<double,4> b(2.5);
+  SIMD<double,4> c(1.0);
   
   cout << "a = " << a << endl;
   cout << "b = " << b << endl;
@@ -70,5 +71,11 @@ int main()
   }
 
   cout << "Select(mask, a, b) = " << Select(mask, a,b) << endl;
+
+  auto d = a*b+c;
+  cout << "d = " << d << endl;
+
+  auto e = a/b-c;
+  cout << "e = " << e << endl;
   
 }
